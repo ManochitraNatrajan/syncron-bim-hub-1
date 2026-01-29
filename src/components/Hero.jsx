@@ -1,4 +1,5 @@
 import heroImg from '../assets/hero.png'
+import services from '../assets/services.png'
 import { GraduationCap, Users } from 'lucide-react'
 
 export default function Hero() {
@@ -22,23 +23,31 @@ export default function Hero() {
             <li>• MEP-focused expertise</li>
             <li>• Training + real project exposure</li>
           </ul>
+
+          <img src={services} alt="Services" className="w-full rounded-2xl object-cover shadow-soft" />
         </div>
 
         {/* Right */}
         <div className="relative">
           <div className="absolute right-0 top-2 hidden flex-col gap-6 text-sm font-semibold text-neutral-800 md:flex">
-            <div className="flex items-center justify-end gap-3">
+            <button
+              type="button"
+              className="flex items-center justify-end gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-neutral-100 hover:text-black"
+            >
               <span>Student Login</span>
               <span className="grid h-12 w-12 place-items-center rounded-full bg-black text-white shadow-soft">
                 <GraduationCap />
               </span>
-            </div>
-            <div className="flex items-center justify-end gap-3">
+            </button>
+            <button
+              type="button"
+              className="flex items-center justify-end gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-neutral-100 hover:text-black"
+            >
               <span>Community Login</span>
               <span className="grid h-12 w-12 place-items-center rounded-full bg-black text-white shadow-soft">
                 <Users />
               </span>
-            </div>
+            </button>
           </div>
 
           <div className="mx-auto max-w-sm md:ml-auto md:max-w-none">

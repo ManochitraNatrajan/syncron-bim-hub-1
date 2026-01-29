@@ -56,7 +56,8 @@ export default function Activities() {
 
         <div
           ref={scrollerRef}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-14 pb-4 scrollbar-none"
+          className="flex snap-x snap-mandatory overflow-x-auto pl-14 pr-14 pb-4 scrollbar-none"
+          style={{ justifyContent: 'space-between' }}
         >
           {items.map((it, idx) => (
             <div
