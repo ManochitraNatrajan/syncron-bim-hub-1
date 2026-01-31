@@ -8,22 +8,7 @@ import Servicebg from "../assets/servicesbg.jpg";
 export default function HowSyncronApproachesBim() {
   return (
     <>
-      <section className="relative w-full overflow-hidden bg-neutral-200 py-16 md:py-24">
-        {/* Subtle diagonal grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.4]"
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 20px,
-              rgba(255,255,255,0.6) 20px,
-              rgba(255,255,255,0.6) 21px
-            )`,
-          }}
-          aria-hidden
-        />
-
+      <section className="relative w-full overflow-hidden py-16 md:py-24">
         <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 px-4 md:grid-cols-[0.5fr_1fr]">
   {/* Left: Full image of guy */}
   <div className="mx-auto max-w-sm md:ml-auto md:max-w-none">
@@ -31,12 +16,13 @@ export default function HowSyncronApproachesBim() {
       src={GuyImg} // your guy image import
       alt="Team member - guy"
       className="block w-[120%] md:w-[150%] h-auto object-contain"
+      style={{width:"500px",position:"absolute",left:"-60px",top:"-90px"}}
     />
   </div>
           {/* Right: Words left, title right */}
-          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-14">
+          <div className="flex flex-col gap-20 md:flex-row md:items-start md:gap-5">
             <div className="space-y-6 md:flex-1">
-              <ul className="space-y-3 text-base font-medium text-neutral-800 md:text-lg">
+              <ul className="space-y-3 text-base font-medium text-neutral-800 md:text-lg" >
                 <li>• BIM taught as a process, not as a software</li>
                 <li>• ISO 19650 introduced as understanding, not compliance</li>
                 <li>• Responsibility explained before deliverables</li>
@@ -44,7 +30,7 @@ export default function HowSyncronApproachesBim() {
               </ul>
 
               <div className="space-y-5 text-base leading-7 text-neutral-700 md:text-lg md:leading-8">
-                <p>
+                <p >
                   This understanding shapes our vision and mission. We aim to build the right BIM
                   mindset in students and professionals, knowing that today&apos;s learners will shape
                   tomorrow&apos;s BIM practice.
@@ -56,11 +42,11 @@ export default function HowSyncronApproachesBim() {
               </div>
             </div>
 
-            <h1 className="flex shrink-0 flex-col text-2xl font-bold leading-tight tracking-tight text-black md:text-5xl lg:text-5xl">
-              <span>How</span>
-              <span>Syncron</span>
-              <span>Approaches</span>
-              <span>BIM</span>
+            <h1 className="flex gap-20 shrink-0 flex-col text-5xl font-bold leading-tight tracking-tight text-black md:text-5xl lg:text-5xl">
+              <span style={{fontSize:"60px",width:"150px"}}>How</span>
+              <span style={{fontSize:"60px",width:"150px"}}>Syncron</span>
+              <span style={{fontSize:"60px",width:"150px"}}>Approaches</span>
+              <span style={{fontSize:"60px",width:"150px"}}>BIM</span>
             </h1>
           </div>
         </div>

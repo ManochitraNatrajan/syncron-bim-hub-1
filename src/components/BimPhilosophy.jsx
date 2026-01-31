@@ -2,7 +2,7 @@ import sbBg from '../assets/sb_bg.png'
 
 export default function BimPhilosophy() {
   return (
-    <section className="relative min-h-[520px] w-full overflow-hidden bg-black py-20 md:py-20">
+    <section className="relative min-h-[460px] w-full overflow-hidden bg-black py-20 md:py-20">
       {/* Background image with reduced opacity so it stays subtle */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"

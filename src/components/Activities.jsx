@@ -12,6 +12,18 @@ const items = [
   { img: a2, caption: '"Sruthi hired in ABC Pvt Ltd. Congratulations to her"' },
   { img: a3, caption: '"Admission started for upskill training programme"' },
   { img: a4, caption: '"Admission started for upskill training programme"' },
+  { img: a1, caption: '"First Batch Training has completed Successfully"' },
+  { img: a2, caption: '"Sruthi hired in ABC Pvt Ltd. Congratulations to her"' },
+  { img: a3, caption: '"Admission started for upskill training programme"' },
+  { img: a4, caption: '"Admission started for upskill training programme"' },
+  { img: a1, caption: '"First Batch Training has completed Successfully"' },
+  { img: a2, caption: '"Sruthi hired in ABC Pvt Ltd. Congratulations to her"' },
+  { img: a3, caption: '"Admission started for upskill training programme"' },
+  { img: a4, caption: '"Admission started for upskill training programme"' },
+  { img: a1, caption: '"First Batch Training has completed Successfully"' },
+  { img: a2, caption: '"Sruthi hired in ABC Pvt Ltd. Congratulations to her"' },
+  { img: a3, caption: '"Admission started for upskill training programme"' },
+  { img: a4, caption: '"Admission started for upskill training programme"' },
 ]
 
 function ArrowButton({ onClick, children }) {
@@ -57,17 +69,17 @@ export default function Activities() {
         <div
           ref={scrollerRef}
           className="flex snap-x snap-mandatory overflow-x-auto pl-14 pr-14 pb-4 scrollbar-none"
-          style={{ justifyContent: 'space-between' }}
+          style={{ justifyContent: 'space-between',gap:"10px" }}
         >
           {items.map((it, idx) => (
             <div
               key={idx}
-              className="w-[180px] shrink-0 snap-start rounded-2xl bg-white/10 p-3 shadow-soft"
+              className="w-[270px] shrink-0 snap-start rounded-2xl bg-white/10 p-3 shadow-soft"
             >
               <div className="overflow-hidden rounded-xl">
                 <img src={it.img} alt="" className="h-44 w-full object-cover" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-white/90">{it.caption}</p>
+              <p className="mt-3 text-ls leading-5 text-white/90" style={{textAlign:"center"}}>{it.caption}</p>
             </div>
           ))}
         </div>

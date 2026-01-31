@@ -10,7 +10,7 @@ export default function Hero() {
         className="
           absolute
           left-[-49%]
-          top-1/2
+          top-1/3
           h-[177%]
           w-[190%]
           -translate-y-1/2
@@ -40,12 +40,12 @@ export default function Hero() {
               How can Syncron support you today?
             </h2>
 
-            <div className="grid grid-cols-2 gap-6 max-w-lg">
+            <div className="grid grid-cols-2 gap-3 max-w-lg">
               {[
-                "🎓 Learn BIM",
-                "🧑‍💻 BIM Resources",
-                "🏗️ BIM Project Support",
-                "💼 BIM Consulting",
+                "🎓Learn BIM",
+                "🧑‍💻BIM Resources",
+                "🏗️BIM Project Support",
+                "💼BIM Consulting",
               ].map((text, i) => (
                 <a
                   key={i}
@@ -74,12 +74,12 @@ export default function Hero() {
               ))}
             </div>
 
-            <p className="mt-10 max-w-md text-sm text-neutral-800">
+            <p className="mt-6 max-w-md text-xl text-neutral-800">
               Syncron BIM Hub is a BIM training and consultancy firm focused on
               practical BIM implementation, not just software learning.
             </p>
 
-            <ul className="mt-4 space-y-1 text-sm text-neutral-900">
+            <ul className="mt-4 space-y-1 text-xl text-neutral-900">
               <li>• BIM aligned with ISO 19650</li>
               <li>• Industry-driven workflows</li>
               <li>• MEP-focused expertise</li>
@@ -95,14 +95,15 @@ export default function Hero() {
               className="
                 absolute
       -bottom-44
-      right-8
+      right-[200px]
       md:-bottom-52
       md:right-0
-      w-full
+      w-[600px]
       max-w-2xl
       md:max-w-[900px]
       object-contain"
-            />
+            style={{left:"100px" }}
+/>
           </div>
 
         </div>

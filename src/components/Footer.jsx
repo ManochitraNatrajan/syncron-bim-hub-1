@@ -50,7 +50,8 @@ export default function Footer() {
                   <img
                     src={qr}
                     alt="WhatsApp community QR code"
-                    className="block h-48 w-48 object-cover sm:h-52 sm:w-52"
+                    className="block h-48 w-48 object-cover sm:h-52 sm:w-52" 
+                    style={{padding:"10px"}}
                   />
                 </div>
                 <p className="mt-3 text-center text-sm font-medium text-white">

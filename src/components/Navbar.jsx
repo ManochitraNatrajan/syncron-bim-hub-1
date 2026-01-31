@@ -1,12 +1,12 @@
-import logo from '../assets/logo.png'
+import logo from '../assets/nav-logo.png'
 
 export default function Navbar() {
   return (
     <header className="mx-auto max-w-6xl px-4">
       <div className="flex items-center justify-between">
         <a href="/" className="flex h-[14rem] items-center overflow-visible">
-        <div className="relative mx-auto max-w-sm md:ml-auto md:max-w-none"></div>
-          <img src={logo} alt="Syncron BIM Hub" className="h-[13rem] w-auto" />
+        <img src={logo} alt="Syncron BIM Hub" className="h-[13rem] w-auto" />
+        <div className="relative mx-auto max-w-sm md:ml-auto md:max-w-none text-2xl font-bold">Syncron BIM Hub</div>
         </a>
 
         <nav className="hidden items-center gap-10 text-lg font-medium text-neutral-700 md:flex">
