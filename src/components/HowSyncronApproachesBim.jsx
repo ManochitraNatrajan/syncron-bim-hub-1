@@ -1,4 +1,9 @@
-import girlGuyImg from '../assets/girl_guy.png'
+import GuyImg from '../assets/guy.png'
+
+
+import bimConsultingBg from "../assets/bim_consulting.jpg";
+import resourceBg from "../assets/resource.jpg";
+import Servicebg from "../assets/servicesbg.jpg";
 
 export default function HowSyncronApproachesBim() {
   return (
@@ -19,16 +24,15 @@ export default function HowSyncronApproachesBim() {
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 px-4 md:grid-cols-[0.4fr_1fr]">
-          {/* Left: 50% crop of girl_guy.png (guy only) – natural aspect so full figure including hands shows */}
-          <div className="overflow-hidden rounded-2xl bg-white shadow-sm md:max-w-sm">
-            <img
-              src={girlGuyImg}
-              alt="Syncron team member"
-              className="block w-[200%] max-w-none object-cover object-left"
-            />
-          </div>
-
+        <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 px-4 md:grid-cols-[0.5fr_1fr]">
+  {/* Left: Full image of guy */}
+  <div className="mx-auto max-w-sm md:ml-auto md:max-w-none">
+    <img
+      src={GuyImg} // your guy image import
+      alt="Team member - guy"
+      className="block w-[120%] md:w-[150%] h-auto object-contain"
+    />
+  </div>
           {/* Right: Words left, title right */}
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-14">
             <div className="space-y-6 md:flex-1">
@@ -52,18 +56,18 @@ export default function HowSyncronApproachesBim() {
               </div>
             </div>
 
-            <h2 className="flex shrink-0 flex-col text-2xl font-bold leading-tight tracking-tight text-black md:text-3xl lg:text-4xl">
+            <h1 className="flex shrink-0 flex-col text-2xl font-bold leading-tight tracking-tight text-black md:text-5xl lg:text-5xl">
               <span>How</span>
               <span>Syncron</span>
               <span>Approaches</span>
               <span>BIM</span>
-            </h2>
+            </h1>
           </div>
         </div>
       </section>
 
       {/* Our Understanding – black bg, white circle, BIM / ISO19650 columns */}
-      <section className="w-full bg-black py-16 md:py-20" aria-labelledby="our-understanding-heading">
+      <section className="w-full bg-black py-16 md:py-50" aria-labelledby="our-understanding-heading">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 md:flex-row md:items-stretch md:justify-between md:gap-8 lg:gap-12">
           {/* Left: BIM */}
           <div className="w-full max-w-xs text-left md:flex-1 md:max-w-none">
@@ -83,19 +87,16 @@ export default function HowSyncronApproachesBim() {
           </div>
 
           {/* Center: Our Understanding – white circle + ellipses + dots */}
-          <div className="relative flex h-52 w-64 shrink-0 items-center justify-center md:h-56 md:w-72">
+          <div className="relative flex h-52 w-94 shrink-0 items-center justify-center md:h-56 md:w-72">
             {/* Decorative concentric ellipses (pill shape) */}
             <div className="absolute inset-0 flex items-center justify-center" aria-hidden>
-              <div className="absolute left-1/2 top-1/2 h-24 w-56 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-neutral-500 md:h-28 md:w-64" />
-              <div className="absolute left-1/2 top-1/2 h-32 w-64 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-neutral-500 md:h-36 md:w-72" />
-              <div className="absolute left-1/2 top-1/2 h-40 w-72 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-neutral-500 md:h-44 md:w-80" />
+              <div className="absolute left-1/2 top-1/2 h-32 w-74 -translate-x-1/2 -translate-y-1/2 rounded-[70%] border border-neutral-500 md:h-36 md:w-72" />
+              <div className="absolute left-1/2 top-1/2 h-40 w-72 -translate-x-1/2 -translate-y-1/2 rounded-[70%] border border-neutral-500 md:h-44 md:w-80" />
             </div>
-            {/* Horizontal dots */}
-            <div className="absolute left-2 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-neutral-500 md:left-3" aria-hidden />
-            <div className="absolute right-2 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-neutral-500 md:right-3" aria-hidden />
+      
             {/* White circle + wording */}
             <div
-              className="relative z-10 flex h-36 w-36 shrink-0 items-center justify-center rounded-full bg-white md:h-44 md:w-44"
+              className="relative z-10 flex h-35 w-36 shrink-0 items-center justify-center rounded-full bg-white md:h-44 md:w-44"
               aria-hidden
             >
               <p className="text-center text-sm font-semibold leading-tight text-black md:text-base">
@@ -124,78 +125,135 @@ export default function HowSyncronApproachesBim() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="w-full bg-neutral-300 py-16 md:py-20" aria-labelledby="services-heading">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid gap-0 md:grid-cols-3">
-            {/* Training Column */}
-            <div className="relative px-8 py-12 md:px-10">
-              <h3 className="mb-6 text-3xl font-bold text-black md:text-4xl">Training</h3>
-              <ul className="mb-8 space-y-3 text-base font-medium text-black md:text-lg">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>For students & working professionals</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Structured modules</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Outcome-oriented learning</span>
-                </li>
-              </ul>
-              <button className="rounded-lg border-2 border-white bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-neutral-900">
-                Explore Training &gt;
-              </button>
-              {/* Diagonal separator */}
-              <div className="absolute right-0 top-0 hidden h-full w-px bg-neutral-400 md:block" style={{ transform: 'skewX(-15deg)' }} aria-hidden />
-            </div>
 
-            {/* BIM Consulting Column */}
-            <div className="relative px-8 py-12 md:px-10">
-              <p className="mb-2 text-sm font-semibold text-black md:text-base">Our Services</p>
-              <h3 className="mb-6 text-3xl font-bold text-black md:text-4xl">BIM Consulting</h3>
-              <ul className="mb-8 space-y-3 text-base font-medium text-black md:text-lg">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>BIM Project Modeling</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Transform your organisation to BIM workflow</span>
-                </li>
-              </ul>
-              <button className="rounded-lg border-2 border-white bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-neutral-900">
-                Discuss a Project &gt;
-              </button>
-              {/* Diagonal separator */}
-              <div className="absolute right-0 top-0 hidden h-full w-px bg-neutral-400 md:block" style={{ transform: 'skewX(-15deg)' }} aria-hidden />
-            </div>
+<section
+  id="services"
+  className="w-full bg-neutral-300 py-16 md:py-20 bg-black/70"
+  aria-labelledby="services-heading"
+  style={{ backgroundImage: `url(${Servicebg})`}}
+>
+  <div className="mx-auto max-w-6xl px-4"></div>
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {/* Training Card */}
+<a
+  href="/training"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative block h-full w-full
+             rounded-2xl overflow-hidden
+             bg-cover bg-center
+             shadow-2xl
+             hover:scale-[1.02] transition-transform duration-300"
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/55"></div>
 
-            {/* Resources Deployment Column */}
-            <div className="relative px-8 py-12 md:px-10">
-              <h3 className="mb-6 text-3xl font-bold text-black md:text-4xl">Resources Deployment</h3>
-              <ul className="mb-8 space-y-3 text-base font-medium text-black md:text-lg">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Short-term BIM support</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Trained & Syncron-ready resources</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden />
-                  <span>Reduced onboarding time</span>
-                </li>
-              </ul>
-              <button className="rounded-lg border-2 border-white bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-neutral-900">
-                Request Resources &gt;
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+    <div>
+      <h3 className="mb-6 text-4xl font-bold">Training</h3>
+
+      <ul className="mb-8 space-y-4 text-lg">
+        <li>For students & working professionals</li>
+        <li>Structured modules</li>
+        <li>Outcome-oriented learning</li>
+      </ul>
+    </div>
+
+    {/* Looks like button but still link */}
+    <span className="inline-block w-fit rounded-lg border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-black">
+      Explore Training →
+    </span>
+  </div>
+</a>
+
+
+      {/* BIM Consulting Tab */}
+
+<a
+  href="/bim-consulting"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative block h-full w-full
+             rounded-2xl overflow-hidden
+             bg-cover bg-center
+             shadow-2xl
+             hover:scale-[1.02] transition-transform duration-300"
+  style={{
+    backgroundImage: `url(${bimConsultingBg})`,
+  }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/55"></div>
+
+  {/* Content */}
+  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+    <div>
+      <p className="mb-2 text-sm font-semibold uppercase tracking-wide">
+        Our Services
+      </p>
+
+      <h3 className="mb-6 text-4xl font-bold">
+        BIM Consulting
+      </h3>
+
+      <ul className="mb-8 space-y-4 text-lg">
+        <li>BIM Project Modeling</li>
+        <li>Organisation-wide BIM workflow setup</li>
+        <li>Standards, audits & implementation</li>
+      </ul>
+    </div>
+
+    {/* Button-style link */}
+    <span className="inline-block w-fit rounded-lg border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-black">
+      Explore BIM Consulting →
+    </span>
+  </div>
+</a>
+
+      
+
+      {/* Resources Deployment Tab */}
+
+<a
+  href="/resources-deployment"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative block h-full w-full
+             rounded-2xl overflow-hidden
+             bg-cover bg-center
+             shadow-2xl
+             hover:scale-[1.02] transition-transform duration-300"
+  style={{
+    backgroundImage: `url(${resourceBg})`,
+  }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/55"></div>
+
+  {/* Content */}
+  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+    <div>
+      <h3 className="mb-6 text-4xl font-bold">
+        Resources Deployment
+      </h3>
+
+      <ul className="mb-8 space-y-4 text-lg">
+        <li>Short-term & long-term BIM support</li>
+        <li>Syncron-ready trained professionals</li>
+        <li>Reduced onboarding & ramp-up time</li>
+      </ul>
+    </div>
+
+    {/* Button-style link */}
+    <span className="inline-block w-fit rounded-lg border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-black">
+      Request Resources →
+    </span>
+  </div>
+</a>
+</div>
+</section>
+
     </>
   )
 }

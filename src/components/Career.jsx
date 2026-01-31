@@ -1,5 +1,5 @@
 import bg from '../assets/career_bgm.png'
-import girlGuyImg from '../assets/girl_guy.png'
+import girlImg from '../assets/girl.png'
 
 const jobs = [
   { title: "BIM Manager", count: 2 },
@@ -28,8 +28,8 @@ export default function Career() {
       <div className="relative mx-auto flex min-h-[420px] max-w-6xl flex-col px-4 py-10 md:flex-row md:items-stretch md:gap-8 md:py-14 lg:gap-12">
         {/* Left: Title, subtitle, job list, CTA – transparent so section bg shows through */}
         <div className="flex flex-1 flex-col justify-center rounded-2xl px-6 py-8 text-white md:py-10">
-          <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">Career</h2>
-          <p className="mt-2 text-xl font-semibold md:text-2xl text-white/95">Job & Internship</p>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">Career</h1>
+          <h2 className="mt-2 text-xl font-semibold md:text-2xl text-white/95">Job & Internship</h2>
 
           <ul className="mt-6 space-y-2 text-base font-medium md:text-lg text-white/95">
             {jobs.map((j) => (
@@ -51,17 +51,17 @@ export default function Career() {
         </div>
 
         {/* Right: Girl (right half of girl_guy.png) – full figure visible */}
-        <div className="relative flex shrink-0 items-end justify-end md:w-[50%] lg:min-w-[360px]">
-          <div className="relative flex min-h-[340px] w-full overflow-hidden rounded-2xl bg-white/10 shadow-lg md:min-h-[420px]">
-            <img
-              src={girlGuyImg}
-              alt="Syncron team member"
-              className="block h-full w-[200%] max-w-none object-cover -translate-x-1/2"
-            />
-          </div>
+       
+  {/* Left: Bigger full girl image */}
+  <div className="mx-auto max-w-sm md:ml-auto md:max-w-none">
+    <img
+      src={girlImg} // transparent PNG of girl
+      alt="Team member - girl"
+      className="w-full object-contain"
+    />
+</div>
 
-        </div>
-      </div>
+     </div>
     </section>
   )
 }

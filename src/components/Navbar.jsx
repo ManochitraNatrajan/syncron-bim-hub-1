@@ -5,6 +5,7 @@ export default function Navbar() {
     <header className="mx-auto max-w-6xl px-4">
       <div className="flex items-center justify-between">
         <a href="/" className="flex h-[14rem] items-center overflow-visible">
+        <div className="relative mx-auto max-w-sm md:ml-auto md:max-w-none"></div>
           <img src={logo} alt="Syncron BIM Hub" className="h-[13rem] w-auto" />
         </a>
 
