@@ -13,12 +13,12 @@ export default function Home() {
       <div className="bg-neutral-100 pt-0">
         <Navbar />
         <Hero />
-        <BimPhilosophy />
+         <Activities />
+         <Testimonials />
         <HowSyncronApproachesBim />
       </div>
 
-      <Activities />
-      <Testimonials />
+      <BimPhilosophy />
       <Career />
       <Footer />
     </div>

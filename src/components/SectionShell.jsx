@@ -4,7 +4,7 @@ export default function SectionShell({ title, dark = false, children, id }) {
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         {title ? (
           <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">{title}</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl font-alata">{title}</h2>
           </div>
         ) : null}
         {children}

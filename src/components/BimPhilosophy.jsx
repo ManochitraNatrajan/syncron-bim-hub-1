@@ -11,17 +11,20 @@ export default function BimPhilosophy() {
       />
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-alata">
           Our BIM Philosophy
         </h2>
 
-        <blockquote className="mt-8 text-lg leading-relaxed text-white md:text-xl">
+        {/* Main Quote */}
+        <blockquote className="mt-8 text-2xl md:text-2xl lg:text-3xl leading-relaxed text-white font-alata">
           &lsquo;BIM alone is not enough,
           <br />
           Clear information workflows make it effective&rsquo;
         </blockquote>
 
-        <div className="mt-10 space-y-4 text-left text-sm leading-6 text-neutral-300 md:text-base">
+        {/* Paragraphs */}
+        <div className="mt-10 space-y-6 text-left text-xl md:text-xl lg:text-xl leading-relaxed text-neutral-300 font-semibold font-alata">
           <p>
             We believe BIM maturity comes from real project responsibility, continuous learning, and
             experience.

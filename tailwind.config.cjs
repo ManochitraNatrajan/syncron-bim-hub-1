@@ -7,7 +7,7 @@ module.exports = {
         soft: "0 8px 30px rgba(0,0,0,0.08)",
       },
       fontFamily: {
-        sans: ["ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"],
+        alata: ['Alata', 'sans-serif'],
       },
     },
   },

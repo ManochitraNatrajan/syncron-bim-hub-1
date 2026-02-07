@@ -1,46 +1,75 @@
+import { useRef } from 'react'
 import SectionShell from './SectionShell.jsx'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const quotes = [
   {
-    name: "Rajat Sharma",
-    text: "Boost your product and service's credibility by adding testimonials from your clients.",
+    name: "Puvin",
+    text: "I’m an engineering graduate from IT who transitioned into BIM through this training. It clarified my career direction and helped me gain strong knowledge and confidence.",
   },
   {
-    name: "Vijay Singh",
-    text: "People love recommendations — use feedback from others who’ve tried it.",
+    name: "Kirubakaran",
+    text: "At Syncron BIM Hub, the quality of instruction was excellent, and the training fully met my expectations.",
   },
   {
-    name: "Geeta Maheswari",
-    text: "Add genuine testimonials to build trust. People love recommendations from others.",
+    name: "Kumara Raja",
+    text: "The instruction was clear and supportive, with practical examples throughout the training. The content was easy to understand and useful for everyday BIM work.",
   },
 ]
 
 export default function Testimonials() {
+  const scrollerRef = useRef(null)
+
   return (
     <SectionShell dark>
-      <div className="flex items-center justify-between">
-        <button className="grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-white/10 text-white hover:bg-white/20">
-          <ChevronLeft />
-        </button>
+      
+      {/* TITLE */}
+      <h3 className="text-left text-2xl md:text-4xl font-alata mb-10 text-white">
+        What People Say About Syncron...
+      </h3>
 
-        <h3 className="text-center text-2xl font-extrabold tracking-tight md:text-4xl">
-          What student say…
-        </h3>
+      {/* HORIZONTAL SCROLLER */}
+      <div
+        ref={scrollerRef}
+        className="
+          flex gap-6
+          overflow-x-auto overflow-y-hidden
+          snap-x snap-mandatory
+          px-14 pb-4
+          scrollbar-none
+          scroll-smooth
+        "
+      >
+        {quotes.map((q, idx) => (
+          <div
+            key={idx}
+            className="
+              w-[300px] shrink-0
+              snap-start
+              rounded-2xl bg-white/5 p-6 shadow-soft
+            "
+          >
+            <p className="text-sm leading-6 text-white/85 font-alata">
+              {q.text}
+            </p>
 
-        <button className="grid h-12 w-12 place-items-center rounded-full border border-white/25 bg-white/10 text-white hover:bg-white/20">
-          <ChevronRight />
-        </button>
-      </div>
-
-      <div className="mt-10 grid gap-8 md:grid-cols-3">
-        {quotes.map((q) => (
-          <div key={q.name} className="rounded-2xl bg-white/5 p-6 shadow-soft">
-            <p className="text-sm leading-6 text-white/85">{q.text}</p>
-            <div className="mt-6 text-sm font-semibold text-white">— {q.name}</div>
+            <div className="mt-6 text-sm font-semibold text-white font-alata">
+              — {q.name}
+            </div>
           </div>
         ))}
       </div>
+
+      {/* HIDE SCROLLBAR */}
+      <style>{`
+        .scrollbar-none::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-none {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+
     </SectionShell>
   )
 }
