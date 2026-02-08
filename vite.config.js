@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/syncron-bim-hub-1/', // <-- your repository name here
+  base: './', // ← This is crucial for static hosting
   plugins: [react()],
-})
+});
