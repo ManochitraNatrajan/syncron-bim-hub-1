@@ -28,7 +28,7 @@ export default function Career() {
 
       {/* Content */}
       <div className="relative mx-auto max-w-6xl px-4 py-12 md:py-16 grid gap-12 md:grid-cols-2 items-center">
-        
+
         {/* LEFT — Job Opportunities */}
         <div className="text-black font-alata">
           <h1 className="text-5xl tracking-tight">Career</h1>
@@ -55,16 +55,17 @@ export default function Career() {
 
         {/* RIGHT — QR Code */}
         <div className="flex flex-col items-center text-center gap-4">
-          <p className="text-sm md:text-base font-alata text-black">
+          <p className="text-base md:text-lg font-alata font-medium text-black">
             Scan the QR code to apply <br />
             and upload your resume
           </p>
 
-          <div className="rounded-2xl bg-white p-4 shadow-xl">
+          {/* 🔽 Only padding reduced here */}
+          <div className="rounded-xl bg-white p-1.5 shadow-lg">
             <img
               src={qrImg}
               alt="QR Code"
-              className="h-36 w-36 object-contain"
+              className="h-44 w-44 md:h-52 md:w-52 object-contain"
             />
           </div>
         </div>

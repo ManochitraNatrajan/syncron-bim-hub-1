@@ -10,74 +10,80 @@ import hsab from "../assets/hsab_bg.png";
 export default function HowSyncronApproachesBim() {
   return (
     <>
-      <section className="relative w-full py-16 md:py-24 bg-gray-300 overflow-hidden">
       
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url(${hsab})`,
-          backgroundPosition: "top right",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.12,
-        }}
-      />
+   <section className="relative w-full py-10 md:py-14 bg-gray-300 overflow-hidden">
+      
+  {/* Background Image */}
+  <div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    backgroundImage: `url(${hsab})`,
+    backgroundPosition: "right -120px",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    opacity: 0.12,
+  }}
+/>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-start gap-12 md:flex-row md:items-start md:gap-5 md:-ml-12">
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-6xl px-4">
+    <div className="flex flex-col items-start gap-10 md:flex-row md:items-start md:gap-5 md:-ml-12">
 
-          {/* LEFT – BULLETS + PARAGRAPH */}
-          <div className="w-full md:flex-1 space-y-7 text-left md:pl-12">
-            <ul className="space-y-3 text-base md:text-lg font-medium text-neutral-800 font-alata">
-              <li>• BIM taught as a process, not as a software</li>
-              <li>• ISO 19650 introduced as understanding, not compliance</li>
-              <li>• Responsibility explained before deliverables</li>
-              <li>• Learning aligned with real project behaviour</li>
-            </ul>
+      {/* LEFT – BULLETS + PARAGRAPH */}
+      <div className="w-full md:flex-1 space-y-7 text-left md:pl-12">
+        <ul className="space-y-3 text-base md:text-lg font-medium text-neutral-800 font-alata">
+          <li>• BIM taught as a process, not as a software</li>
+          <li>• ISO 19650 introduced as understanding, not compliance</li>
+          <li>• Responsibility explained before deliverables</li>
+          <li>• Learning aligned with real project behaviour</li>
+        </ul>
 
-            <div className="space-y-4 text-base md:text-lg leading-7 md:leading-10 text-neutral-700 font-alata">
-              <p>
-                This understanding shapes our vision and mission. We aim to build the right BIM
-                mindset in students and professionals, knowing that today&apos;s learners will shape
-                tomorrow&apos;s BIM practice.
-              </p>
-              <p>
-                Syncron&apos;s mission is to share this knowledge through simplified, practical
-                training grounded in real project workflows.
-              </p>
-            </div>
-          </div>
-
-          {/* RIGHT – HEADING */}
-          <h1
-  className="
-    flex shrink-0 flex-col
-    font-alata font-bold tracking-tight
-    text-5xl sm:text-5xl md:text-6xl lg:text-6xl
-    leading-snug
-    space-y-2
-    text-black
-  "
->
-  <span>How</span>
-  <span>Syncron</span>
-  <span>Approaches</span>
-  <span>BIM</span>
-</h1>
-
+        <div className="space-y-4 text-base md:text-lg leading-7 md:leading-10 text-neutral-700 font-alata">
+          <p>
+            This understanding shapes our vision and mission. We aim to build the right BIM
+            mindset in students and professionals, knowing that today&apos;s learners will shape
+            tomorrow&apos;s BIM practice.
+          </p>
+          <p>
+            Syncron&apos;s mission is to share this knowledge through simplified, practical
+            training grounded in real project workflows.
+          </p>
         </div>
       </div>
-    </section>
+
+      {/* RIGHT – HEADING */}
+      <h1
+        className="
+          flex shrink-0 flex-col
+          mt-4 md:mt-6
+          font-alata font-bold tracking-tight
+          text-9xl sm:text-5xl md:text-7xl lg:text-7xl
+          leading-snug
+          space-y-2
+          text-black
+        "
+      >
+        <span>How</span>
+        <span>Syncron</span>
+        <span>Approaches</span>
+        <span>BIM</span>
+      </h1>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Our Understanding – black bg, white circle, BIM / ISO19650 columns */}
        
-      <section className="w-full bg-black py-16 md:py-24" aria-labelledby="our-understanding-heading">
+      <section
+  className="w-full bg-black py-10 md:py-14"
+  aria-labelledby="our-understanding-heading"
+>
   <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 md:flex-row md:items-stretch md:justify-between md:gap-8 lg:gap-12">
 
     {/* Left: BIM */}
-    <div className="w-full max-w-xs text-left md:flex-1 md:max-w-none">
+    <div className="w-full max-w-xs text-left md:flex-1 md:max-w-none md:ml-6">
       <h3
         id="our-understanding-heading"
         className="mb-4 text-3xl md:text-4xl lg:text-5xl font-bold text-white font-alata"
@@ -99,7 +105,8 @@ export default function HowSyncronApproachesBim() {
     {/* Center: Our Understanding Circle */}
     <div className="relative flex h-48 w-48 sm:h-52 sm:w-56 md:h-56 md:w-72 shrink-0 items-center justify-center">
       <div
-        className="relative z-10 flex h-48 w-48 md:h-60 md:w-60 shrink-0 items-center justify-center rounded-full bg-white" aria-hidden
+        className="relative z-10 flex h-48 w-48 md:h-60 md:w-60 shrink-0 items-center justify-center rounded-full bg-white"
+        aria-hidden
       >
         <p className="text-center text-2xl md:text-3xl font-bold leading-tight text-black font-alata">
           Our<br />Understanding

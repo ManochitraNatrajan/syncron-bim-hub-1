@@ -21,9 +21,9 @@ export default function Testimonials() {
 
   return (
     <SectionShell dark>
-      
+
       {/* TITLE */}
-      <h3 className="text-left text-2xl md:text-4xl font-alata mb-10 text-white">
+      <h3 className="text-left text-4xl md:text-4xl font-alata mb-6 text-white">
         What People Say About Syncron...
       </h3>
 
@@ -34,7 +34,8 @@ export default function Testimonials() {
           flex gap-6
           overflow-x-auto overflow-y-hidden
           snap-x snap-mandatory
-          px-6 sm:px-10 md:px-14 pb-4
+          px-6 sm:px-10 md:px-14
+          pb-1
           scrollbar-none
           scroll-smooth
         "
@@ -45,14 +46,14 @@ export default function Testimonials() {
             className="
               w-[300px] shrink-0
               snap-start
-              rounded-2xl bg-white/5 p-6 shadow-soft
+              rounded-2xl bg-white/5 p-5 shadow-soft
             "
           >
             <p className="text-sm leading-6 text-white/85 font-alata">
               {q.text}
             </p>
 
-            <div className="mt-6 text-sm font-semibold text-white font-alata">
+            <div className="mt-4 text-sm font-semibold text-white font-alata">
               — {q.name}
             </div>
           </div>

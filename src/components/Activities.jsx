@@ -27,16 +27,13 @@ export default function Activities() {
 
     const start = () => {
       if (interval) return
-
       interval = setInterval(() => {
         setActive(prev => {
           const next = (prev + 1) % items.length
-
           scroller.scrollTo({
-            left: next * 280, // card width + gap
+            left: next * 250,
             behavior: 'smooth',
           })
-
           return next
         })
       }, 1600)
@@ -49,11 +46,8 @@ export default function Activities() {
       }
     }
 
-    // only run when section is visible
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        entry.isIntersecting ? start() : stop()
-      },
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
       { threshold: 0.5 }
     )
 
@@ -70,10 +64,11 @@ export default function Activities() {
       <div
         ref={scrollerRef}
         className="
-          flex gap-6
+          flex gap-5
           overflow-x-auto overflow-y-hidden
           snap-x snap-mandatory
-          px-6 sm:px-10 md:px-14 pb-3
+          px-4 sm:px-8 md:px-12
+          py-1
           scrollbar-none
         "
       >
@@ -81,18 +76,18 @@ export default function Activities() {
           <div
             key={idx}
             className={`
-              w-[260px] h-[360px]
+              w-[240px] h-[320px]
               shrink-0 snap-center
               rounded-2xl bg-white/10 p-3
               transition-all duration-700 ease-out
               ${
                 active === idx
-                  ? 'scale-110 -translate-y-6 opacity-100 bg-white/25 shadow-2xl z-20'
+                  ? 'scale-105 -translate-y-3 opacity-100 bg-white/25 shadow-2xl z-20'
                   : 'scale-95 opacity-50'
               }
             `}
           >
-            <div className="h-[260px] overflow-hidden rounded-xl">
+            <div className="h-[220px] overflow-hidden rounded-xl">
               <img
                 src={it.img}
                 alt=""
@@ -100,7 +95,7 @@ export default function Activities() {
               />
             </div>
 
-            <p className="mt-3 text-sm text-white/90 text-center font-alata">
+            <p className="mt-2 text-sm text-white/90 text-center font-alata leading-snug">
               {it.caption}
             </p>
           </div>

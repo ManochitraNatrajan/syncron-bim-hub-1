@@ -32,7 +32,7 @@ export default function Hero() {
 
           {/* LEFT CONTENT */}
           <div>
-            <h1 className="text-4xl md:text-6xl font-black leading-tight text-black font-alata">
+            <h1 className="text-4xl md:text-8xl font-black leading-tight text-black font-alata -mt-6 md:-mt-8">
               Skills Beyond <br className="hidden md:block" /> Drafting
             </h1>
 
@@ -81,7 +81,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative mt-16 md:mt-0 h-[420px] sm:h-[480px] md:h-[720px] overflow-visible">
+          <div className="relative mt-6 md:mt-0 md:h-[720px] overflow-visible">
             <img
               src={heroImg}
               alt="BIM Engineer"
