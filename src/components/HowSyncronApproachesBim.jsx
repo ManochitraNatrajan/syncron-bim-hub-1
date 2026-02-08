@@ -18,7 +18,7 @@ export default function HowSyncronApproachesBim() {
   className="absolute inset-0 pointer-events-none"
   style={{
     backgroundImage: `url(${hsab})`,
-    backgroundPosition: "right -120px",
+    backgroundPosition: "right -80px",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     opacity: 0.12,
@@ -57,7 +57,7 @@ export default function HowSyncronApproachesBim() {
           flex shrink-0 flex-col
           mt-4 md:mt-6
           font-alata font-bold tracking-tight
-          text-9xl sm:text-5xl md:text-7xl lg:text-7xl
+          text-5xl sm:text-5xl md:text-6xl lg:text-6xl
           leading-snug
           space-y-2
           text-black
