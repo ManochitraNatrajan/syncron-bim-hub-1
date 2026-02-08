@@ -3,20 +3,16 @@ import heroBg from '../assets/hero-bg.png'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[60vh] md:min-h-[90vh] overflow-hidden bg-neutral-300">
+    <section className="relative w-full min-h-screen md:min-h-[90vh] overflow-hidden bg-neutral-300">
 
       {/* SOFT ROTATED BACKGROUND */}
       <div
-        className="
-          absolute left-[-130%] top-1/3 h-[300%] w-[290%]
-          -translate-y-1/2 bg-no-repeat bg-contain
-          opacity-40 pointer-events-none
-        "
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundPosition: 'top-right',
-          backgroundSize: 'cover',
-        }}
+        className="absolute left-[-130%] top-1/3 h-[300%] w-[290%] -translate-y-1/2 bg-no-repeat bg-contain opacity-40 pointer-events-none"
+  style={{
+    backgroundImage: `url(${heroBg})`,
+    backgroundPosition: 'top-right',
+    backgroundSize: 'cover',
+  }}
       />
 
       {/* FADE MASK */}
