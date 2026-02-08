@@ -3,39 +3,36 @@ import heroBg from '../assets/hero-bg.png'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen md:min-h-[90vh] overflow-hidden bg-neutral-300">
-
+    <section className="relative w-full overflow-hidden bg-neutral-300">
+      
       {/* SOFT ROTATED BACKGROUND */}
       <div
         className="absolute left-[-130%] top-1/3 h-[300%] w-[290%] -translate-y-1/2 bg-no-repeat bg-contain opacity-40 pointer-events-none"
-  style={{
-    backgroundImage: `url(${heroBg})`,
-    backgroundPosition: 'top-right',
-    backgroundSize: 'cover',
-  }}
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundPosition: 'top-right',
+          backgroundSize: 'cover',
+        }}
       />
 
       {/* FADE MASK */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-transparent to-gray-200"></div>
 
       {/* CONTENT */}
-      <div className="relative mx-auto max-w-6xl px-4 py-10 md:py-16">
-
-        {/* ⬇️ ONLY CHANGE IS HERE */}
+      <div className="relative mx-auto max-w-6xl px-4 pt-10 md:pt-16 pb-0">
         <div
           className="
             grid
             items-center
             gap-8 md:gap-10
-
             min-[480px]:grid-cols-2
             md:grid-cols-[1.1fr_0.9fr]
           "
         >
 
-          {/* LEFT */}
+          {/* LEFT CONTENT */}
           <div>
-            <h1 className="text-4xl font-black leading-tight md:text-6xl text-black font-alata">
+            <h1 className="text-4xl md:text-6xl font-black leading-tight text-black font-alata">
               Skills Beyond <br className="hidden md:block" /> Drafting
             </h1>
 
@@ -45,10 +42,10 @@ export default function Hero() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
               {[
-                "🎓Learn BIM",
-                "🧑‍💻BIM Resources",
-                "🏗️BIM Project Support",
-                "💼BIM Consulting",
+                "🎓 Learn BIM",
+                "🧑‍💻 BIM Resources",
+                "🏗️ BIM Project Support",
+                "💼 BIM Consulting",
               ].map((text, i) => (
                 <a
                   key={i}
@@ -83,42 +80,26 @@ export default function Hero() {
             </ul>
           </div>
 
-          {/* RIGHT – MAN IMAGE */}
-          <div
-            className="
-              relative
-    mt-20 sm:mt-28 md:mt-0
-    h-[420px] sm:h-[480px] md:h-[720px]
-
-    min-[480px]:overflow-hidden
-    md:overflow-visible
-            "
-          >
+          {/* RIGHT IMAGE */}
+          <div className="relative mt-16 md:mt-0 h-[420px] sm:h-[480px] md:h-[720px] overflow-visible">
             <img
               src={heroImg}
               alt="BIM Engineer"
               className="
                 absolute
-    -bottom-36
-    right-0
+                bottom-[-80px]
+                right-[-40px]
+                md:bottom-[-130px]
+                md:right-[-154px]
 
-    /* MOBILE-DESKTOP VIEW FIX */
-    min-[480px]:right-[-40px]
+                w-[360px]
+                sm:w-[420px]
+                md:w-[640px]
+                max-w-none
+                object-contain
 
-    /* DESKTOP (UNCHANGED) */
-    md:-bottom-52
-    md:right-[-154px]
-
-    w-[360px]
-    sm:w-[420px]
-    md:w-[640px]
-    max-w-none
-    object-contain
-
-    /* REAL MOBILE */
-    max-md:static
-    max-md:mx-auto
-    max-md:mt-[-70px]
+                max-md:static
+                max-md:mx-auto
               "
             />
           </div>
@@ -128,4 +109,3 @@ export default function Hero() {
     </section>
   )
 }
-
