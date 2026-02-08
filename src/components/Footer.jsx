@@ -40,30 +40,32 @@ export default function Footer() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6 py-14 md:px-8">
-        
-        {/* TWO CLEAR SECTIONS */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          
+
           {/* LEFT SECTION */}
           <section>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
               Join BIM Sync Community
             </h2>
 
-            <div className="mt-8 flex flex-col gap-6 sm:flex-row">
-              <div className="flex-shrink-0">
-                <div className="overflow-hidden rounded-xl bg-white shadow-lg p-2">
+            <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start">
+              
+              {/* QR BLOCK — FIXED */}
+              <div className="flex flex-col items-center sm:items-start">
+                <div className="inline-flex items-center justify-center rounded-xl bg-white p-2 shadow-lg">
                   <img
                     src={qr}
                     alt="WhatsApp community QR code"
-                    className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 object-cover"
+                    className="h-28 w-28 md:h-32 md:w-32 object-contain"
                   />
                 </div>
-                <p className="mt-3 text-center text-sm font-medium">
+
+                <p className="mt-3 text-sm font-medium text-center sm:text-left">
                   Scan to Join
                 </p>
               </div>
 
+              {/* BENEFITS */}
               <ul className="flex flex-col gap-3">
                 {benefits.map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
@@ -81,8 +83,8 @@ export default function Footer() {
             </p>
           </section>
 
-          {/* RIGHT SECTION — ON RIGHT, TEXT LEFT */}
-          <section className="justify-self-stretch text-left lg:pl-52">
+          {/* RIGHT SECTION */}
+          <section className="text-left lg:pl-52">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
               Connect Us
             </h2>
@@ -124,7 +126,7 @@ export default function Footer() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    target="_blank"   // ensures it opens in a new tab
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-10 w-10 items-center justify-center 
                                rounded-full bg-[#333] hover:bg-[#444]"
@@ -139,7 +141,6 @@ export default function Footer() {
               </p>
             </div>
           </section>
-
         </div>
 
         <div className="mt-14 border-t border-white/10 pt-6 text-center text-xs text-white/50">

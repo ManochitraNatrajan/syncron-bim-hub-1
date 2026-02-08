@@ -3,24 +3,39 @@ import heroBg from '../assets/hero-bg.png'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[90vh] overflow-hidden bg-neutral-300">
+    <section className="relative w-full min-h-[60vh] md:min-h-[90vh] overflow-hidden bg-neutral-300">
 
       {/* SOFT ROTATED BACKGROUND */}
       <div
         className="
-          absolute left-[-130%] top-1/3 h-[300%] w-[290%] -translate-y-1/2 bg-no-repeat bg-contain opacity-40 pointer-events-none
+          absolute left-[-130%] top-1/3 h-[300%] w-[290%]
+          -translate-y-1/2 bg-no-repeat bg-contain
+          opacity-40 pointer-events-none
         "
-        style={{ backgroundImage: `url(${heroBg})`,
-      backgroundPosition: 'top-right',
-    backgroundSize: 'cover', }}
-        />
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundPosition: 'top-right',
+          backgroundSize: 'cover',
+        }}
+      />
 
-      {/* FADE MASK (prevents section-like edge) */}
+      {/* FADE MASK */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-transparent to-gray-200"></div>
 
       {/* CONTENT */}
-      <div className="relative mx-auto max-w-6xl px-4 py-16">
-        <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto max-w-6xl px-4 py-10 md:py-16">
+
+        {/* ⬇️ ONLY CHANGE IS HERE */}
+        <div
+          className="
+            grid
+            items-center
+            gap-8 md:gap-10
+
+            min-[480px]:grid-cols-2
+            md:grid-cols-[1.1fr_0.9fr]
+          "
+        >
 
           {/* LEFT */}
           <div>
@@ -32,7 +47,7 @@ export default function Hero() {
               How can Syncron support you today?
             </h2>
 
-            <div className="grid grid-cols-2 gap-3 max-w-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
               {[
                 "🎓Learn BIM",
                 "🧑‍💻BIM Resources",
@@ -44,22 +59,15 @@ export default function Hero() {
                   href="/training"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-20
-        flex
-        items-center
-        justify-center
-        gap-2
-        rounded-xl
-        bg-gray-300
-        px-6
-        text-base
-        md:text-lg
-        text-black
-        font-semibold
-        transition
-        hover:bg-white
-        shadow-lg
-        text-center"
+                  className="
+                    h-20
+                    flex items-center justify-center gap-2
+                    rounded-xl bg-gray-300
+                    px-6 text-base md:text-lg
+                    text-black font-semibold
+                    transition hover:bg-white
+                    shadow-lg text-center
+                  "
                 >
                   {text}
                 </a>
@@ -79,23 +87,44 @@ export default function Hero() {
             </ul>
           </div>
 
-          {/* RIGHT – MAN POPS FROM BOTTOM */}
-          <div className="relative h-[550px] md:h-[520px]">
+          {/* RIGHT – MAN IMAGE */}
+          <div
+            className="
+              relative
+    mt-20 sm:mt-28 md:mt-0
+    h-[420px] sm:h-[480px] md:h-[720px]
+
+    min-[480px]:overflow-hidden
+    md:overflow-visible
+            "
+          >
             <img
               src={heroImg}
               alt="BIM Engineer"
               className="
                 absolute
-      -bottom-44
-      right-[200px]
-      md:-bottom-52
-      md:right-0
-      w-[600px]
-      max-w-2xl
-      md:max-w-[900px]
-      object-contain"
-            style={{left:"100px" }}
-/>
+    -bottom-36
+    right-0
+
+    /* MOBILE-DESKTOP VIEW FIX */
+    min-[480px]:right-[-40px]
+
+    /* DESKTOP (UNCHANGED) */
+    md:-bottom-52
+    md:right-[-154px]
+
+    w-[360px]
+    sm:w-[420px]
+    md:w-[640px]
+    max-w-none
+    object-contain
+
+    /* REAL MOBILE */
+    max-md:static
+    max-md:mx-auto
+    max-md:mt-[-70px]
+              "
+            />
           </div>
 
         </div>
@@ -103,3 +132,4 @@ export default function Hero() {
     </section>
   )
 }
+

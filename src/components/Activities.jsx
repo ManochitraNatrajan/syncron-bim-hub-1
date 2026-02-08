@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import SectionShell from './SectionShell.jsx'
 
 import a1 from '../assets/activity1.jpg'
@@ -17,51 +17,99 @@ const items = [
 
 export default function Activities() {
   const scrollerRef = useRef(null)
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const scroller = scrollerRef.current
+    if (!scroller) return
+
+    let interval = null
+
+    const start = () => {
+      if (interval) return
+
+      interval = setInterval(() => {
+        setActive(prev => {
+          const next = (prev + 1) % items.length
+
+          scroller.scrollTo({
+            left: next * 280, // card width + gap
+            behavior: 'smooth',
+          })
+
+          return next
+        })
+      }, 1600)
+    }
+
+    const stop = () => {
+      if (interval) {
+        clearInterval(interval)
+        interval = null
+      }
+    }
+
+    // only run when section is visible
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        entry.isIntersecting ? start() : stop()
+      },
+      { threshold: 0.5 }
+    )
+
+    observer.observe(scroller)
+
+    return () => {
+      stop()
+      observer.disconnect()
+    }
+  }, [])
 
   return (
-    <SectionShell  title="News & Updates" dark>
-      <div className="relative">
-
-        <div
-          ref={scrollerRef}
-          className="
-            flex gap-4
-            overflow-x-auto overflow-y-hidden
-            snap-x snap-mandatory
-            px-14 pb-4
-            scrollbar-none
-            scroll-smooth
-          "
-        >
-          {items.map((it, idx) => (
-            <div
-              key={idx}
-              className="w-[270px] shrink-0 snap-start rounded-2xl bg-white/10 p-3 shadow-soft"
-            >
-              <div className="overflow-hidden rounded-xl">
-                <img
-                  src={it.img}
-                  alt=""
-                  className="h-44 w-full object-cover"
-                />
-              </div>
-
-              <p className="mt-3 text-sm leading-5 text-white/90 font-alata text-center">
-                {it.caption}
-              </p>
+    <SectionShell title="News & Updates" dark>
+      <div
+        ref={scrollerRef}
+        className="
+          flex gap-6
+          overflow-x-auto overflow-y-hidden
+          snap-x snap-mandatory
+          px-6 sm:px-10 md:px-14 pb-3
+          scrollbar-none
+        "
+      >
+        {items.map((it, idx) => (
+          <div
+            key={idx}
+            className={`
+              w-[260px] h-[360px]
+              shrink-0 snap-center
+              rounded-2xl bg-white/10 p-3
+              transition-all duration-700 ease-out
+              ${
+                active === idx
+                  ? 'scale-110 -translate-y-6 opacity-100 bg-white/25 shadow-2xl z-20'
+                  : 'scale-95 opacity-50'
+              }
+            `}
+          >
+            <div className="h-[260px] overflow-hidden rounded-xl">
+              <img
+                src={it.img}
+                alt=""
+                className="h-full w-full object-cover"
+              />
             </div>
-          ))}
-        </div>
+
+            <p className="mt-3 text-sm text-white/90 text-center font-alata">
+              {it.caption}
+            </p>
+          </div>
+        ))}
       </div>
 
       <style>{`
-        .scrollbar-none::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-none {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
       `}</style>
     </SectionShell>
   )

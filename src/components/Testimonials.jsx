@@ -34,7 +34,7 @@ export default function Testimonials() {
           flex gap-6
           overflow-x-auto overflow-y-hidden
           snap-x snap-mandatory
-          px-14 pb-4
+          px-6 sm:px-10 md:px-14 pb-4
           scrollbar-none
           scroll-smooth
         "

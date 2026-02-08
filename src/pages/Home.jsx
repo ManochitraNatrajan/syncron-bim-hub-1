@@ -15,10 +15,10 @@ export default function Home() {
         <Hero />
          <Activities />
          <Testimonials />
+         <BimPhilosophy />
         <HowSyncronApproachesBim />
       </div>
-
-      <BimPhilosophy />
+      
       <Career />
       <Footer />
     </div>

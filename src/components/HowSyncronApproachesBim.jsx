@@ -1,4 +1,4 @@
-import GuyImg from '../assets/guy.png'
+
 import bimConsultingBg from "../assets/bim_consulting.jpg";
 import resourceBg from "../assets/resource.jpg";
 import Servicebg from "../assets/hero-bg.png";
@@ -11,62 +11,65 @@ export default function HowSyncronApproachesBim() {
   return (
     <>
       <section className="relative w-full py-16 md:py-24 bg-gray-300 overflow-hidden">
-        
-        {/* Background Image – top right, faint */}
-        <div
-          className="absolute top-0 right-0 h-full w-full z-0 pointer-events-none"
-          style={{
-            backgroundImage: `url(${hsab})`,
-            backgroundPosition: "top right",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            opacity: 0.12
-          }}
-        />
+      
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${hsab})`,
+          backgroundPosition: "top right",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.12,
+        }}
+      />
 
-        {/* Content on top */}
-        <div className="relative z-10 mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-[0.5fr_1fr] items-start">
-  {/* Left: Full image of guy */}
-  <div className="mx-auto max-w-sm md:ml-auto md:max-w-none">
-    <img
-      src={GuyImg} // your guy image import
-      alt="Team member - guy"
-      className="block w-[120%] md:w-[150%] h-auto object-contain"
-      style={{width:"600px",position:"absolute",left:"-140px",top:"-90px"}}
-    />
-  </div>
-          {/* Right: Words left, title right */}
-          <div className="flex flex-col gap-20 md:flex-row md:items-start md:gap-5 md:-ml-12">
-            <div className="space-y-7 md:flex-1">
-              <ul className="space-y-3 text-base font-medium text-neutral-800 md:text-lg font-alata" >
-                <li>• BIM taught as a process, not as a software</li>
-                <li>• ISO 19650 introduced as understanding, not compliance</li>
-                <li>• Responsibility explained before deliverables</li>
-                <li>• Learning aligned with real project behaviour</li>
-              </ul>
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4">
+        <div className="flex flex-col items-start gap-12 md:flex-row md:items-start md:gap-5 md:-ml-12">
 
-              <div className="space-y-4 text-base leading-7 text-neutral-700 md:text-lg md:leading-10 font-alata ">
-                <p >
-                  This understanding shapes our vision and mission. We aim to build the right BIM
-                  mindset in students and professionals, knowing that today&apos;s learners will shape
-                  tomorrow&apos;s BIM practice.
-                </p>
-                <p>
-                  Syncron&apos;s mission is to share this knowledge through simplified, practical
-                  training grounded in real project workflows.
-                </p>
-              </div>
+          {/* LEFT – BULLETS + PARAGRAPH */}
+          <div className="w-full md:flex-1 space-y-7 text-left md:pl-12">
+            <ul className="space-y-3 text-base md:text-lg font-medium text-neutral-800 font-alata">
+              <li>• BIM taught as a process, not as a software</li>
+              <li>• ISO 19650 introduced as understanding, not compliance</li>
+              <li>• Responsibility explained before deliverables</li>
+              <li>• Learning aligned with real project behaviour</li>
+            </ul>
+
+            <div className="space-y-4 text-base md:text-lg leading-7 md:leading-10 text-neutral-700 font-alata">
+              <p>
+                This understanding shapes our vision and mission. We aim to build the right BIM
+                mindset in students and professionals, knowing that today&apos;s learners will shape
+                tomorrow&apos;s BIM practice.
+              </p>
+              <p>
+                Syncron&apos;s mission is to share this knowledge through simplified, practical
+                training grounded in real project workflows.
+              </p>
             </div>
-
-            <h1 className="flex gap-20 shrink-0 flex-col text-5xl font-bold leading-tight tracking-tight text-black md:text-5xl lg:text-5xl md:-translate-x-10 font-alata">
-              <span style={{fontSize:"70px",width:"150px"}}>How</span>
-              <span style={{fontSize:"70px",width:"150px"}}>Syncron</span>
-              <span style={{fontSize:"70px",width:"150px"}}>Approaches</span>
-              <span style={{fontSize:"70px",width:"150px"}}>BIM</span>
-            </h1>
           </div>
+
+          {/* RIGHT – HEADING */}
+          <h1
+  className="
+    flex shrink-0 flex-col
+    font-alata font-bold tracking-tight
+    text-5xl sm:text-5xl md:text-6xl lg:text-6xl
+    leading-snug
+    space-y-2
+    text-black
+  "
+>
+  <span>How</span>
+  <span>Syncron</span>
+  <span>Approaches</span>
+  <span>BIM</span>
+</h1>
+
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Our Understanding – black bg, white circle, BIM / ISO19650 columns */}
        
@@ -94,7 +97,7 @@ export default function HowSyncronApproachesBim() {
     </div>
 
     {/* Center: Our Understanding Circle */}
-    <div className="relative flex h-52 w-94 shrink-0 items-center justify-center md:h-56 md:w-72">
+    <div className="relative flex h-48 w-48 sm:h-52 sm:w-56 md:h-56 md:w-72 shrink-0 items-center justify-center">
       <div
         className="relative z-10 flex h-48 w-48 md:h-60 md:w-60 shrink-0 items-center justify-center rounded-full bg-white" aria-hidden
       >
@@ -131,15 +134,9 @@ export default function HowSyncronApproachesBim() {
   id="services"
   className="w-full bg-neutral-300 py-16 md:py-20 bg-black/70"
   aria-labelledby="services-heading"
- style={{
-    backgroundImage: `url(${servicessectionbg})`,
-    backgroundPosition: "top",
-    backgroundSize: "cover",   // or "cover"
-    backgroundRepeat: "no-repeat"
-  }}
 >
   <div className="mx-auto max-w-6xl px-4"></div>
-  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+  <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 gap-6 md:grid-cols-3">
       {/* Training Card */}
 <a
   href="/training"
@@ -158,7 +155,7 @@ export default function HowSyncronApproachesBim() {
   <div className="absolute inset-0 bg-black/55"></div>
 
   {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
     <div>
       <h3 className="mb-6 text-4xl font-bold font-alata">Training</h3>
 
@@ -191,7 +188,7 @@ export default function HowSyncronApproachesBim() {
   <div className="absolute inset-0 bg-black/55"></div>
 
   {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
     <div>
 
       <h3 className="mb-6 text-4xl font-bold font-alata">
@@ -230,7 +227,7 @@ export default function HowSyncronApproachesBim() {
   <div className="absolute inset-0 bg-black/55"></div>
 
   {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
+  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
     <div>
       <h3 className="mb-6 text-4xl font-bold font-alata">
          Resources Deployment
