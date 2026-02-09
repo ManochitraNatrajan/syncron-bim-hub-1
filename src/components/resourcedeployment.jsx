@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import bg from "../assets/background.png";
 
-export default function Training() {
+export default function ResourceDeployment() {
   return (
     <section className="relative min-h-screen w-full bg-black text-white overflow-hidden font-alata">
 
@@ -49,45 +49,38 @@ export default function Training() {
 
         {/* HEADING */}
         <h1 className="mb-4 text-4xl md:text-5xl font-bold">
-          Our BIM Training Services
+          BIM Resource Deployment
         </h1>
 
         <p className="mb-10 max-w-3xl text-lg text-neutral-300">
-          We provide structured, role-based BIM training focused on industry
-          understanding and information workflows.
+          We deploy BIM professionals based on project needs and maturity, including:
         </p>
 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 items-center">
 
-          <Circle title={["Foundation", "for Every", "BIM Role"]} />
-          <Box title="AEC & BIM Fundamentals">
-            <li>Overview of AEC industry & lifecycle</li>
-            <li>What BIM is (and is not)</li>
-            <li>BIM roles & accountability</li>
-            <li>ISO 19650 fundamentals</li>
-          </Box>
+          <Circle title={["Flexible", "Support", "With less", "Commitment"]} />
+          <PillBlock title="Project-Based Deployment">
+            <li>Resources deployed for a specific project phase or lifecycle</li>
+            <li>Roles defined based on project requirements</li>
+            <li>Strict adherence to BIM scope, standards & deliverables</li>
+          </PillBlock>
 
-          <Box title="BIM Modelling Training">
-            <li>Discipline-specific modelling</li>
-            <li>Project-based standards</li>
-            <li>Coordination readiness</li>
-          </Box>
-          <Circle title={["Think", "Beyond", "3D Model"]} />
+          <PillBlock title="Dedicated Resource Deployment">
+            <li>Exclusive BIM resources for your organisation</li>
+            <li>Long-term engagement with stable roles</li>
+            <li>Aligned with internal BIM standards & workflows</li>
+            <li>Ideal for ongoing or multiple projects</li>
+          </PillBlock>
+          <Circle title={["Stable BIM", "Support You", "Can Rely On"]} />
 
-          <Circle title={["Control", "Before Clash", "Resolution"]} />
-          <Box title="BIM Coordinator Training">
-            <li>Coordination workflows</li>
-            <li>Clash management</li>
-            <li>Information delivery</li>
-          </Box>
-
-          <Box title="BIM Management Training">
-            <li>Strategy & governance</li>
-            <li>ISO compliance</li>
-            <li>Project oversight</li>
-          </Box>
-          <Circle title={["Strategy,", "Governance,", "and Control"]} />
+          <Circle title={["On-Site", "Presence", "Remote", "Expertise"]} />
+          <PillBlock title="Hybrid Support Deployment">
+            <li>On-site, remote, or mixed support models</li>
+            <li>Central oversight by Syncron BIM Hub</li>
+            <li>Continuous quality & workflow monitoring</li>
+            <li>Clear communication & escalation channels</li>
+          </PillBlock>
 
         </div>
       </div>
@@ -100,7 +93,7 @@ export default function Training() {
 function Circle({ title }) {
   return (
     <div className="mx-auto flex h-60 w-60 items-center justify-center rounded-full border-2 border-dotted border-neutral-400 text-center">
-      <h2 className="text-xl font-semibold leading-tight">
+      <h2 className="text-2xl md:text-3xl font-semibold leading-snug">
         {title.map((t, i) => (
           <span key={i} className="block">{t}</span>
         ))}
@@ -109,16 +102,14 @@ function Circle({ title }) {
   );
 }
 
-function Box({ title, children }) {
+
+function PillBlock({ title, children }) {
   return (
     <div>
-      {/* PILL TITLE */}
-      <div className="inline-block mb-3 rounded-full border-2 border-dotted border-neutral-400 px-10 py-2 text-xl font-semibold">
+      <div className="inline-block rounded-full border-2 border-dotted border-neutral-400 px-8 py-3 text-lg md:text-xl font-semibold tracking-wide">
         {title}
       </div>
-
-      {/* BULLETS */}
-      <ul className="list-disc space-y-2 pl-5 text-base text-neutral-300">
+      <ul className="list-disc space-y-3 pl-6 text-base md:text-lg text-neutral-100">
         {children}
       </ul>
     </div>

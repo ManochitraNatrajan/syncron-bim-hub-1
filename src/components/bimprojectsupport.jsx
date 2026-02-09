@@ -50,7 +50,7 @@ export default function BIMProjectSupport() {
           BIM Project Support
         </h1>
 
-        <p className="mb-14 max-w-4xl text-xl text-neutral-300">
+        <p className="mb-14 max-w-4xl text-xl text-neutral-100">
           We provide practical BIM project support to help teams deliver BIM
           efficiently, either by fully managing BIM delivery or by supporting
           BIM modelling under client management.
@@ -61,7 +61,7 @@ export default function BIMProjectSupport() {
           {/* Managed BIM */}
           <div>
             <PillTitle text="Managed BIM Project Delivery" />
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-300">
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-100">
               <li>We manage BIM execution for the project</li>
               <li>BIM modelling & coordination management</li>
               <li>Workflow and deliverable control aligned with ISO 19650</li>
@@ -77,7 +77,7 @@ export default function BIMProjectSupport() {
 
           <div>
             <PillTitle text="BIM Modelling Support Only" />
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-300">
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-100">
               <li>Client manages BIM strategy, coordination & decisions</li>
               <li>We provide BIM modelling resources and outputs</li>
               <li>No direct BIM management or client-side coordination</li>
@@ -95,7 +95,7 @@ export default function BIMProjectSupport() {
 function Circle({ title }) {
   return (
     <div className="mx-auto flex h-64 w-64 items-center justify-center rounded-full border-2 border-dotted border-neutral-400 text-center">
-      <h2 className="text-2xl font-semibold leading-snug">
+      <h2 className="text-2xl md:text-3xl font-semibold leading-snug">
         {title.map((line, i) => (
           <span key={i} className="block">{line}</span>
         ))}
@@ -106,7 +106,7 @@ function Circle({ title }) {
 
 function PillTitle({ text }) {
   return (
-    <div className="inline-block mb-4 rounded-full border-2 border-dotted border-neutral-400 px-12 py-4 text-2xl font-semibold">
+    <div className="inline-block rounded-full border-2 border-dotted border-neutral-400 px-8 py-3 text-lg md:text-xl font-semibold tracking-wide">
       {text}
     </div>
   );

@@ -97,7 +97,7 @@ export default function Training() {
 function Circle({ title }) {
   return (
     <div className="mx-auto flex h-64 w-64 items-center justify-center rounded-full border-2 border-dotted border-neutral-400 text-center">
-      <h2 className="text-2xl font-semibold leading-snug">
+      <h2 className="text-2xl md:text-4xl font-semibold leading-snug">
         {title.map((t, i) => (
           <span key={i} className="block">{t}</span>
         ))}
@@ -110,12 +110,12 @@ function Box({ title, children }) {
   return (
     <div>
       {/* DOTTED PILL TITLE */}
-      <div className="inline-block mb-4 rounded-full border-2 border-dotted border-neutral-400 px-12 py-4 text-2xl font-semibold">
+      <div className="inline-block rounded-full border-2 border-dotted border-neutral-400 px-8 py-3 text-lg md:text-2xl font-semibold tracking-wide">
         {title}
       </div>
 
       {/* BULLETS */}
-      <ul className="list-disc space-y-3 pl-6 text-lg text-neutral-300">
+      <ul className="list-disc space-y-3 pl-6 text-lg text-neutral-100">
         {children}
       </ul>
     </div>
