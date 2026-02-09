@@ -1,24 +1,113 @@
-<Link
-  to="/bim-project-support"
-  className="relative block h-full w-full
-             rounded-2xl overflow-hidden
-             bg-cover bg-center
-             shadow-2xl
-             hover:scale-[1.02] transition-transform duration-300"
-  style={{ backgroundImage: `url(${bimConsultingBg})` }}
->
-  <div className="absolute inset-0 bg-black/55"></div>
+import { Link } from "react-router-dom";
+import bg from "../assets/background.png";
 
-  <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12 text-white">
-    <div>
-      <h3 className="mb-6 text-4xl font-bold font-alata">
-        BIM Project Support
-      </h3>
-      <ul className="mb-8 space-y-4 text-lg font-alata">
-        <li>• BIM Project Modeling</li>
-        <li>• Organisation-wide BIM workflow setup</li>
-        <li>• Standards, audits & implementation</li>
-      </ul>
+export default function BIMProjectSupport() {
+  return (
+    <section className="relative min-h-screen w-full bg-black text-white overflow-hidden font-alata">
+
+      {/* LEFT BACKGROUND IMAGE */}
+      <div
+        className="absolute -top-[18rem] z-40 h-full w-[80%] pointer-events-none"
+  style={{
+    backgroundImage: `url(${bg})`,
+    backgroundRepeat: "repeat-y",
+    backgroundSize: "300%",
+    backgroundPosition: "center",
+    transform: "rotate(90deg)",
+    transformOrigin: "left center",
+    opacity: 0.3,
+  }}
+/>
+
+      {/* RIGHT BACKGROUND IMAGE */}
+      <div
+        className="absolute right-0 -top-[44rem] z-40 h-full w-[80%] pointer-events-none"
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundRepeat: "repeat-y",
+          backgroundSize: "300%",
+          backgroundPosition: "center",
+          transform: "rotate(-90deg)",
+          transformOrigin: "right center",
+          opacity: 0.3,
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/60 z-[1]" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-14">
+
+        <Link
+          to="/"
+          className="inline-block mb-8 rounded-lg border border-neutral-600 px-6 py-2 text-sm text-neutral-300 hover:bg-white hover:text-black transition"
+        >
+          ← Back to Home
+        </Link>
+
+        <h1 className="mb-4 text-5xl font-bold">
+          BIM Project Support
+        </h1>
+
+        <p className="mb-14 max-w-4xl text-xl text-neutral-300">
+          We provide practical BIM project support to help teams deliver BIM
+          efficiently, either by fully managing BIM delivery or by supporting
+          BIM modelling under client management.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-16 items-center">
+
+          {/* Managed BIM */}
+          <div>
+            <PillTitle text="Managed BIM Project Delivery" />
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-300">
+              <li>We manage BIM execution for the project</li>
+              <li>BIM modelling & coordination management</li>
+              <li>Workflow and deliverable control aligned with ISO 19650</li>
+              <li>BIM-related communication & follow-ups</li>
+              <li>Client not required to manage BIM day-to-day</li>
+            </ul>
+          </div>
+
+          <Circle title={["We manage", "& deliver", "Project behalf", "of you"]} />
+
+          {/* Modelling Only */}
+          <Circle title={["You manage", "& deliver", "we do model"]} />
+
+          <div>
+            <PillTitle text="BIM Modelling Support Only" />
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-lg text-neutral-300">
+              <li>Client manages BIM strategy, coordination & decisions</li>
+              <li>We provide BIM modelling resources and outputs</li>
+              <li>No direct BIM management or client-side coordination</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================= COMPONENTS ================= */
+
+function Circle({ title }) {
+  return (
+    <div className="mx-auto flex h-64 w-64 items-center justify-center rounded-full border-2 border-dotted border-neutral-400 text-center">
+      <h2 className="text-2xl font-semibold leading-snug">
+        {title.map((line, i) => (
+          <span key={i} className="block">{line}</span>
+        ))}
+      </h2>
     </div>
-  </div>
-</Link>
+  );
+}
+
+function PillTitle({ text }) {
+  return (
+    <div className="inline-block mb-4 rounded-full border-2 border-dotted border-neutral-400 px-12 py-4 text-2xl font-semibold">
+      {text}
+    </div>
+  );
+}

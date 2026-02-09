@@ -5,6 +5,7 @@ import Servicebg from "../assets/hero-bg.png";
 import trainingBg from "../assets/training.jpg";
 import servicessectionbg from "../assets/servicessectionbg.png";
 import hsab from "../assets/hsab_bg.png";
+import { Link } from "react-router-dom";
 
 
 export default function HowSyncronApproachesBim() {
@@ -136,119 +137,103 @@ export default function HowSyncronApproachesBim() {
 
 
       {/* Services Section */}
-
 <section
   id="services"
   className="w-full bg-neutral-300 py-16 md:py-20 bg-black/70"
   aria-labelledby="services-heading"
 >
   <div className="mx-auto max-w-6xl px-4"></div>
+
   <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 gap-6 md:grid-cols-3">
-      {/* Training Card */}
-<a
-  href="/training"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="relative block h-full w-full
-             rounded-2xl overflow-hidden
-             bg-cover bg-center
-             shadow-2xl
-             hover:scale-[1.02] transition-transform duration-300"
-             style={{
-    backgroundImage: `url(${trainingBg})`,
-  }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/55"></div>
+    
+    {/* Training Card */}
+    <Link
+      to="/training"
+      className="relative block h-full w-full
+                 rounded-2xl overflow-hidden
+                 bg-cover bg-center
+                 shadow-2xl
+                 hover:scale-[1.02] transition-transform duration-300"
+      style={{
+        backgroundImage: `url(${trainingBg})`,
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55"></div>
 
-  {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
-    <div>
-      <h3 className="mb-6 text-4xl font-bold font-alata">Training</h3>
+      {/* Content */}
+      <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
+        <div>
+          <h3 className="mb-6 text-4xl font-bold font-alata">Training</h3>
 
-      <ul className="mb-8 space-y-4 text-lg font-alata">
-        <li>• For students & working professionals</li>
-        <li>• Structured modules</li>
-        <li>• Outcome-oriented learning</li>
-      </ul>
-    </div>
+          <ul className="mb-8 space-y-4 text-lg font-alata">
+            <li>• For students & working professionals</li>
+            <li>• Structured modules</li>
+            <li>• Outcome-oriented learning</li>
+          </ul>
+        </div>
+      </div>
+    </Link>
+
+    {/* BIM Consulting Tab */}
+    <Link
+      to="/bimprojectsupport"
+      className="relative block h-full w-full
+                 rounded-2xl overflow-hidden
+                 bg-cover bg-center
+                 shadow-2xl
+                 hover:scale-[1.02] transition-transform duration-300"
+      style={{
+        backgroundImage: `url(${bimConsultingBg})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black/55"></div>
+
+      <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
+        <div>
+          <h3 className="mb-6 text-4xl font-bold font-alata">
+            BIM Project support
+          </h3>
+
+          <ul className="mb-8 space-y-4 text-lg font-alata">
+            <li>• BIM Project Modeling</li>
+            <li>• Organisation-wide BIM workflow setup</li>
+            <li>• Standards, audits & implementation</li>
+          </ul>
+        </div>
+      </div>
+    </Link>
+
+    {/* Resources Deployment Tab */}
+    <Link
+      to="/resourcedeployment"
+      className="relative block h-full w-full
+                 rounded-2xl overflow-hidden
+                 bg-cover bg-center
+                 shadow-2xl
+                 hover:scale-[1.02] transition-transform duration-300"
+      style={{
+        backgroundImage: `url(${resourceBg})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black/55"></div>
+
+      <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
+        <div>
+          <h3 className="mb-6 text-4xl font-bold font-alata">
+            Resources Deployment
+          </h3>
+
+          <ul className="mb-8 space-y-4 text-lg font-alata">
+            <li>• Short-term & long-term BIM support</li>
+            <li>• Syncron-ready trained professionals</li>
+            <li>• Reduced onboarding & ramp-up time</li>
+          </ul>
+        </div>
+      </div>
+    </Link>
+
   </div>
-</a>
-
-
-      {/* BIM Consulting Tab */}
-
-<a
-  href="/bim-consulting"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="relative block h-full w-full
-             rounded-2xl overflow-hidden
-             bg-cover bg-center
-             shadow-2xl
-             hover:scale-[1.02] transition-transform duration-300"
-  style={{
-    backgroundImage: `url(${bimConsultingBg})`,
-  }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/55"></div>
-
-  {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
-    <div>
-
-      <h3 className="mb-6 text-4xl font-bold font-alata">
-        BIM Project support
-      </h3>
-
-      <ul className="mb-8 space-y-4 text-lg font-alata">
-        <li>• BIM Project Modeling</li>
-        <li>• Organisation-wide BIM workflow setup</li>
-        <li>• Standards, audits & implementation</li>
-      </ul>
-    </div>
-
-   
-  </div>
-</a>
-
-      
-
-      {/* Resources Deployment Tab */}
-
-<a
-  href="/resources-deployment"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="relative block h-full w-full
-             rounded-2xl overflow-hidden
-             bg-cover bg-center
-             shadow-2xl
-             hover:scale-[1.02] transition-transform duration-300"
-  style={{
-    backgroundImage: `url(${resourceBg})`,
-  }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/55"></div>
-
-  {/* Content */}
-  <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
-    <div>
-      <h3 className="mb-6 text-4xl font-bold font-alata">
-         Resources Deployment
-      </h3>
-
-      <ul className="mb-8 space-y-4 text-lg font-alata">
-        <li>• Short-term & long-term BIM support</li>
-        <li>• Syncron-ready trained professionals</li>
-        <li>• Reduced onboarding & ramp-up time</li>
-      </ul>
-    </div>
-  </div>
-</a>
-</div>
 </section>
 
     </>
