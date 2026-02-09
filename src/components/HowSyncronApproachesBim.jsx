@@ -12,26 +12,25 @@ export default function HowSyncronApproachesBim() {
   return (
     <>
       
-   <section className="relative w-full py-10 md:py-14 bg-gray-300 overflow-hidden">
-      
+    <section className="relative w-full bg-gray-300 overflow-hidden min-h-[90vh] py-16 md:py-28">
   {/* Background Image */}
   <div
-  className="absolute inset-0 pointer-events-none"
-  style={{
-    backgroundImage: `url(${hsab})`,
-    backgroundPosition: "right -80px",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    opacity: 0.12,
-  }}
-/>
+    className="absolute inset-0 pointer-events-none"
+    style={{
+      backgroundImage: `url(${hsab})`,
+      backgroundPosition: "right center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      opacity: 0.12,
+    }}
+  />
 
   {/* Content */}
   <div className="relative z-10 mx-auto max-w-6xl px-4">
-    <div className="flex flex-col items-start gap-10 md:flex-row md:items-start md:gap-5 md:-ml-12">
+    <div className="flex flex-col items-start gap-12 md:flex-row md:items-start md:gap-16 md:-ml-12">
 
       {/* LEFT – BULLETS + PARAGRAPH */}
-      <div className="w-full md:flex-1 space-y-7 text-left md:pl-12">
+      <div className="w-full md:flex-1 space-y-8 text-left md:pl-12 md:mt-6 lg:mt-10">
         <ul className="space-y-3 text-base md:text-lg font-medium text-neutral-800 font-alata">
           <li>• BIM taught as a process, not as a software</li>
           <li>• ISO 19650 introduced as understanding, not compliance</li>
@@ -56,10 +55,10 @@ export default function HowSyncronApproachesBim() {
       <h1
         className="
           flex shrink-0 flex-col
-          mt-4 md:mt-6
+          mt-8 md:mt-12
           font-alata font-bold tracking-tight
-          text-5xl sm:text-5xl md:text-6xl lg:text-6xl
-          leading-snug
+          text-6xl sm:text-6xl md:text-7xl lg:text-8xl
+          leading-tight
           space-y-2
           text-black
         "
@@ -73,6 +72,7 @@ export default function HowSyncronApproachesBim() {
     </div>
   </div>
 </section>
+
 
 
       {/* Our Understanding – black bg, white circle, BIM / ISO19650 columns */}
@@ -142,10 +142,9 @@ export default function HowSyncronApproachesBim() {
   className="w-full bg-neutral-300 py-16 md:py-20 bg-black/70"
   aria-labelledby="services-heading"
 >
-  <div className="mx-auto max-w-6xl px-4"></div>
+  
 
-  <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 gap-6 md:grid-cols-3">
-    
+  <div className="mx-auto max-w-[1400px] px-4 grid grid-cols-1 gap-6 md:grid-cols-3">
     {/* Training Card */}
     <Link
       to="/training"

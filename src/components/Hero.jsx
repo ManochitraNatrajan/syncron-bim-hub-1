@@ -40,32 +40,34 @@ export default function Hero() {
               How can Syncron support you today?
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
-              {[
-                "🎓 Learn BIM",
-                "🧑‍💻 BIM Resources",
-                "🏗️ BIM Project Support",
-                "💼 BIM Consulting",
-              ].map((text, i) => (
-                <a
-                  key={i}
-                  href="/training"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    h-20
-                    flex items-center justify-center gap-2
-                    rounded-xl bg-gray-300
-                    px-6 text-base md:text-lg
-                    text-black font-semibold
-                    transition hover:bg-white
-                    shadow-lg text-center
-                  "
-                >
-                  {text}
-                </a>
-              ))}
-            </div>
+            <div className="flex flex-col gap-3 max-w-md">
+  {[
+    { text: "🎓 Learn BIM", href: "/training" },
+    { text: "🧑‍💻 BIM Resources", href: "/resourcedeployment" },
+    { text: "🏗️ BIM Project Support", href: "/bimprojectsupport" },
+  ].map((item, i) => (
+    <a
+      key={i}
+      href={item.href}
+      className="
+        h-16
+        w-full
+        flex items-center justify-center
+        rounded-xl
+        bg-gray-300
+        px-4
+        text-base md:text-lg
+        text-black font-semibold font-alata
+        transition
+        hover:bg-white
+        shadow-md
+      "
+    >
+      {item.text}
+    </a>
+  ))}
+</div>
+
 
             <p className="mt-6 max-w-md text-xl text-neutral-800 font-alata">
               Syncron BIM Hub is a BIM training and consultancy firm focused on
