@@ -4,23 +4,34 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-neutral-300 font-alata">
-
+    <section className="relative w-full overflow-hidden bg-neutral-300 font-alata pb-1 md:pb-5">
+      
       {/* SOFT ROTATED BACKGROUND */}
       <div
-        className="absolute left-[-130%] top-1/3 h-[300%] w-[290%] -translate-y-1/2 bg-no-repeat bg-contain opacity-40 pointer-events-none"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundPosition: "top-right",
-          backgroundSize: "cover",
-        }}
-      />
+  className="
+    absolute
+    left-[-150%]
+    top-1/2
+    h-[320%]
+    w-[320%]
+    -translate-y-1/2
+    bg-no-repeat
+    opacity-30
+    pointer-events-none
+  "
+  style={{
+    backgroundImage: `url(${heroBg})`,
+    backgroundPosition: "right center",
+    backgroundSize: "contain",
+  }}
+/>
 
-      {/* FADE MASK (CLICK SAFE) */}
+
+      {/* FADE MASK */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-transparent to-gray-200 pointer-events-none" />
 
       {/* CONTENT */}
-      <div className="relative mx-auto max-w-6xl px-4 pt-10 md:pt-16 pb-0">
+      <div className="relative mx-auto max-w-6xl px-4 pt-12 md:pt-20">
         <div
           className="
             grid
@@ -30,18 +41,16 @@ export default function Hero() {
             md:grid-cols-[1.1fr_0.9fr]
           "
         >
-
           {/* LEFT CONTENT */}
           <div>
-            <h1 className="text-4xl md:text-8xl font-black leading-tight text-black -mt-6 md:-mt-8">
+            <h1 className="text-3xl md:text-6xl font-black leading-tight text-black">
               Skills Beyond <br className="hidden md:block" /> Drafting
             </h1>
 
-            <h2 className="mt-10 mb-6 text-3xl font-bold text-black">
+            <h2 className="mt-8 mb-6 text-2xl md:text-3xl font-bold text-black">
               How can Syncron support you today?
             </h2>
 
-            {/* LINKS */}
             <div className="flex flex-col gap-3 max-w-md">
               {[
                 { text: "🎓 Learn BIM", to: "/training" },
@@ -52,7 +61,7 @@ export default function Hero() {
                   key={i}
                   to={item.to}
                   className="
-                    h-16
+                    h-14
                     w-full
                     flex items-center justify-center
                     rounded-xl
@@ -70,12 +79,12 @@ export default function Hero() {
               ))}
             </div>
 
-            <p className="mt-6 max-w-md text-xl text-neutral-800">
+            <p className="mt-6 max-w-md text-lg text-neutral-800">
               Syncron BIM Hub is a BIM training and consultancy firm focused on
               practical BIM implementation, not just software learning.
             </p>
 
-            <ul className="mt-4 space-y-1 text-xl text-neutral-900">
+            <ul className="mt-4 space-y-1 text-lg text-neutral-900">
               <li>• BIM aligned with ISO 19650</li>
               <li>• Industry-driven workflows</li>
               <li>• MEP-focused expertise</li>
@@ -84,29 +93,29 @@ export default function Hero() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative mt-6 md:mt-0 md:h-[720px] overflow-visible">
+          <div className="relative mt-6 md:mt-0 md:h-[700px] overflow-visible">
             <img
               src={heroImg}
               alt="BIM Engineer"
               className="
                 absolute
-                bottom-[-80px]
-                right-[-40px]
-                md:bottom-[-130px]
-                md:right-[-154px]
+                bottom-[-30px]
+                right-[-110px]
+                md:bottom-[-60px]
+                md:right-[-130px]
 
-                w-[360px]
-                sm:w-[420px]
-                md:w-[640px]
+                w-[300px]
+                sm:w-[380px]
+                md:w-[540px]
                 max-w-none
                 object-contain
 
                 max-md:static
                 max-md:mx-auto
+                max-md:mt-12
               "
             />
           </div>
-
         </div>
       </div>
     </section>

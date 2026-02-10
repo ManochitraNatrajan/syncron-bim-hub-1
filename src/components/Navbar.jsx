@@ -1,76 +1,99 @@
-import { useState } from 'react'
-import logo from '../assets/nav-logo.png'
-import logoname from '../assets/logo.png'
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/nav-logo.png";
+import logoname from "../assets/logo.png";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const closeMenu = () => setOpen(false);
+
+  const NavLink = ({ label, to, state, onClick }) => (
+    <Link
+      to={to}
+      state={state}
+      onClick={() => {
+        closeMenu();
+        onClick?.();
+      }}
+      className="block py-3 text-lg hover:text-black"
+    >
+      {label}
+    </Link>
+  );
 
   return (
-    <header className="w-full bg-neutral-200 relative z-50">
-      <div className="mx-auto max-w-6xl px-4 py-3">
-        <div className="flex items-center justify-between">
+    <header className="w-full bg-neutral-200 sticky top-0 z-50">
+      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
 
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="Syncron BIM Hub Icon"
-              className="h-16 w-auto translate-y-[2px]"
-            />
-            <img
-              src={logoname}
-              alt="Syncron BIM Hub Logo"
-              className="h-10 w-auto"
-            />
-          </a>
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 mt-1">
+          <img src={logo} alt="logo" className="h-16 mt-1 ml-2" />
+          <img src={logoname} alt="logo name" className="h-10" />
+        </Link>
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center gap-12 text-lg font-medium text-neutral-700 font-alata">
-            <a className="hover:text-black" href="#services">Our Services</a>
-            <a className="hover:text-black" href="#career">Career</a>
-            <a className="hover:text-black" href="#contact">Connect Us</a>
-          </nav>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex gap-12 font-alata text-lg text-neutral-700">
+          <Link to="/about">About Us</Link>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden rounded-full border border-black/15 bg-white px-3 py-1.5
-                       text-base font-semibold text-black shadow-soft hover:bg-neutral-50"
-          >
-            Menu
-          </button>
-        </div>
+          {isHome ? (
+            <a href="#services">Services</a>
+          ) : (
+            <Link to="/" state={{ scrollTo: "services" }}>
+              Services
+            </Link>
+          )}
 
-        {/* Mobile dropdown menu */}
-        {open && (
-          <div className="md:hidden mt-4 rounded-2xl bg-white shadow-xl border border-black/10">
-            <nav className="flex flex-col divide-y text-base font-medium text-neutral-800 font-alata">
-              <a
-                href="#services"
-                onClick={() => setOpen(false)}
-                className="px-6 py-3 hover:bg-neutral-100"
-              >
-                Our Services
-              </a>
-              <a
-                href="#career"
-                onClick={() => setOpen(false)}
-                className="px-6 py-3 hover:bg-neutral-100"
-              >
-                Career
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="px-6 py-3 hover:bg-neutral-100"
-              >
-                Connect Us
-              </a>
-            </nav>
-          </div>
-        )}
+          {isHome ? (
+            <a href="#career">Career</a>
+          ) : (
+            <Link to="/" state={{ scrollTo: "career" }}>
+              Career
+            </Link>
+          )}
 
+          <a href="#contact">Contact Us</a>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden rounded-full border border-black/15 bg-white px-4 py-2 font-semibold shadow"
+        >
+          Menu
+        </button>
       </div>
+
+      {/* Mobile Dropdown */}
+      {open && (
+        <div className="md:hidden bg-white border-t shadow-xl">
+          <div className="px-6 py-4 font-alata text-neutral-800">
+            <NavLink label="About Us" to="/about" />
+
+            {isHome ? (
+              <>
+                <a href="#services" onClick={closeMenu} className="block py-3">
+                  Services
+                </a>
+                <a href="#career" onClick={closeMenu} className="block py-3">
+                  Career
+                </a>
+              </>
+            ) : (
+              <>
+                <NavLink label="Services" to="/" state={{ scrollTo: "services" }} />
+                <NavLink label="Career" to="/" state={{ scrollTo: "career" }} />
+              </>
+            )}
+
+            <a href="#contact" onClick={closeMenu} className="block py-3">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      )}
     </header>
-  )
+  );
 }

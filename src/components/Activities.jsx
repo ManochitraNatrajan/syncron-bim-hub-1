@@ -11,7 +11,7 @@ const items = [
   { img: a1, caption: '"Fundamental BIM Training–Batch 3 Currently in progress"' },
   { img: a2, caption: '"Fundamental BIM Training – Batch 4 Starts 2nd week of February"' },
   { img: a3, caption: '"Enrolments Open for upcoming batches"' },
-  { img: a4, caption: '"Upskilling BIM Training New batch planned for March"' },
+  { img: a4, caption: '"BIM Coordinator Training planned for March"' },
   { img: a5, caption: '"Syncron BIM Master Roadmap Download will be available soon"' },
 ]
 

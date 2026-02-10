@@ -1,20 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout";
 
-import Home from "./pages/Home.jsx";
-import Training from "./components/training.jsx";
-import BimProjectSupport from "./components/bimprojectsupport.jsx";
-import ResourceDeployment from "./components/resourcedeployment.jsx";
+import Home from "./pages/Home";
+import About from "./components/about";
+import Training from "./components/training";
+import BimProjectSupport from "./components/bimprojectsupport";
+import ResourceDeployment from "./components/resourcedeployment";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
+    <Routes>
+      {/* Layout wrapper */}
+      <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/training" element={<Training />} />
         <Route path="/bimprojectsupport" element={<BimProjectSupport />} />
         <Route path="/resourcedeployment" element={<ResourceDeployment />} />
-      </Routes>
-    </Router>
+      </Route>
+    </Routes>
   );
 }
 
