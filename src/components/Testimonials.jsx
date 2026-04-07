@@ -4,14 +4,17 @@ import SectionShell from './SectionShell.jsx'
 const quotes = [
   {
     name: "Puvin",
+    date: "11/02/2025",
     text: "I’m an engineering graduate from IT who transitioned into BIM through this training. It clarified my career direction and helped me gain strong knowledge and confidence.",
   },
   {
     name: "Kirubakaran",
+    date: "17/02/2025",
     text: "At Syncron BIM Hub, the quality of instruction was excellent, and the training fully met my expectations.",
   },
   {
     name: "Kumara Raja",
+    date: "23/06/2024",
     text: "The instruction was clear and supportive, with practical examples throughout the training. The content was easy to understand and useful for everyday BIM work.",
   },
 ]
@@ -21,7 +24,6 @@ export default function Testimonials() {
 
   return (
     <SectionShell dark>
-
       {/* TITLE */}
       <h3 className="text-left text-4xl md:text-4xl font-alata mb-6 text-white">
         What People Say About Syncron...
@@ -35,9 +37,9 @@ export default function Testimonials() {
           overflow-x-auto overflow-y-hidden
           snap-x snap-mandatory
           px-6 sm:px-10 md:px-14
-          pb-1
-          scrollbar-none
+          pb-4
           scroll-smooth
+          custom-scrollbar
         "
       >
         {quotes.map((q, idx) => (
@@ -47,30 +49,52 @@ export default function Testimonials() {
               w-[300px] shrink-0
               snap-start
               rounded-2xl bg-white/5 p-5 shadow-soft
+              border border-white/10
             "
           >
             <p className="text-sm leading-6 text-white/85 font-alata">
               {q.text}
             </p>
 
-            <div className="mt-4 text-sm font-semibold text-white font-alata">
-              — {q.name}
+            <div className="mt-5 flex items-center justify-between">
+              <div className="text-sm font-semibold text-white font-alata">
+                — {q.name}
+              </div>
+
+              <div className="text-xs text-white/60 font-alata">
+                {q.date}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* HIDE SCROLLBAR */}
+      {/* CUSTOM SCROLLBAR */}
       <style>{`
-        .scrollbar-none::-webkit-scrollbar {
-          display: none;
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0.12);
         }
-        .scrollbar-none {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.12);
+          border-radius: 999px;
+          margin: 0 12px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.7);
+          border-radius: 999px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.95);
         }
       `}</style>
-
     </SectionShell>
   )
 }

@@ -29,7 +29,7 @@ export default function Services() {
               <ul className="mb-8 space-y-4 text-lg font-alata">
                 <li>• BIM Modellers Training</li>
                 <li>• BIM Coordinators Training</li>
-                <li>• BIM Maagement Training</li>
+                <li>• BIM Management Training</li>
               </ul>
             </div>
           </div>
@@ -46,12 +46,12 @@ export default function Services() {
           <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 md:p-12 text-white">
             <div>
               <h3 className="mb-6 text-4xl font-bold font-alata">
-                <span>BIM Project</span><br></br>
-                <span>Support</span> 
+                <span>BIM </span><br></br>
+                <span>Consulting</span> 
               </h3>
               <ul className="mb-8 space-y-4 text-lg font-alata">
-                <li>• BIM Project Modeling</li>
-                <li>• Organisation-wide BIM workflow setup</li>
+                <li>• BIM Project Support</li>
+                <li>• Organisational BIM workflow setup</li>
                 <li>• Standards, audits & implementation</li>
               </ul>
             </div>
@@ -72,8 +72,8 @@ export default function Services() {
                 Resources Deployment
               </h3>
               <ul className="mb-8 space-y-4 text-lg font-alata">
-                <li>• Short-term & long-term BIM support</li>
-                <li>• Syncron-ready trained professionals</li>
+                <li>• Short-term & long-term support</li>
+                <li>• Trained professionals ready to hire</li>
                 <li>• Reduced onboarding & ramp-up time</li>
               </ul>
             </div>
